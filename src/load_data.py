@@ -21,9 +21,9 @@ def drop_duplicates(df: pd.DataFrame) -> pd.DataFrame:
         df: The data to clean.
 
     Returns:
-        The data without duplicate rows.
+        The data without duplicate rows, with a fresh 0..n-1 index. 
     """
-    return df.drop_duplicates()
+    return df.drop_duplicates().reset_index(drop=True) 
 
 
 if __name__ == "__main__":
