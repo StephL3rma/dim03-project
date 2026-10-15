@@ -14,5 +14,17 @@ def load_data(path: str) -> pd.DataFrame:
     return pd.read_csv(path, sep=",", encoding="utf-8-sig")
 
 
+def drop_duplicates(df: pd.DataFrame) -> pd.DataFrame:
+    """Remove duplicate rows from a DataFrame.
+
+    Args:
+        df: The data to clean.
+
+    Returns:
+        The data without duplicate rows.
+    """
+    return df.drop_duplicates()
+
+
 if __name__ == "__main__":
     print(load_data(sys.argv[1]).head())
